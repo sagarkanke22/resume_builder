@@ -238,6 +238,14 @@ SIZE GATE:
   [ ] Integration point connects parts as described
   [ ] No single strReplace spans both parts
 
+  SECURITY / AUTH ONLY (step adds/removes @authenticate_user or touches routes/middleware)
+  [ ] Read `claude_modules/auth_guard.md` and complete all steps before applying
+  [ ] Import present: from api.middlewares.auth_middleware import authenticate_user
+  [ ] Security(auth_scheme) param in function signature
+  [ ] Decorator order correct: @router first, @authenticate_user second, async def third
+  [ ] Endpoint is not a pre-auth flow (login, OTP, SSE, logo — must stay open)
+  [ ] Run verify.md Tier 4 after applying
+
   BUG FIX ONLY
   [ ] Fix targets root cause, not symptom
   [ ] No variable renamed anywhere in the function
